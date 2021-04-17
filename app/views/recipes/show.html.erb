@@ -1,7 +1,33 @@
-<div class="jumbotron">
-  <h1 class="display-4"><%= @recipe.name %></h1>
-  <p class="lead"><%= @recipe.instructions %></p>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">
+      <h1 class="display-4"><%= @recipe.name %></h1>
+      <br/>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+  <ul class="list-group">
+    <h4>
+    <% @recipe.ingredients.map do |i| %>
+        <li class="list-group-item-action align-items-center">
+        <span class="badge bg-primary">
+          <%= number_with_precision(i.quantity, precision: 2, strip_insignificant_zeros: true) %>
+          <%= i.unit %>
+        </span>
+          <%= i.name %>
+        </li>
+    <% end %>
+    </h4>
+  </ul>
+    </div>
+    <div class="col-sm-8">
+      <p class="lead"><%= h(@recipe.instructions).gsub(/\n/, '<br/>').html_safe %></p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-secondary" %>
-<%= link_to 'Back', recipes_path, class: "btn btn-secondary" %>
+      <%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-secondary" %>
+      <%= link_to 'Back', recipes_path, class: "btn btn-secondary" %>
+
+    </div>
+  </div>
+</div>
