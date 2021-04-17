@@ -20,5 +20,5 @@
   <%= @ingredient.recipe_id %>
 </p>
 
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+<%= link_to 'Edit', edit_ingredient_path(@ingredient), class: "btn btn-secondary" %>
+<%= link_to 'Back', ingredients_path, class: "btn btn-secondary" %>

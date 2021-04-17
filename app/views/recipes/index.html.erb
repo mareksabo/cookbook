@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Recipes</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered table-hover">
+  <thead class="thread-dark">
     <tr>
       <th>Name</th>
       <th>Instructions</th>
@@ -16,9 +14,9 @@
       <tr>
         <td><%= recipe.name %></td>
         <td><%= recipe.instructions %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', recipe, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Recipe', new_recipe_path %>
+<%= link_to 'New Recipe', new_recipe_path, class: "btn btn-secondary" %>

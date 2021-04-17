@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :quantity %>
-    <%= form.text_field :quantity %>
+    <%= form.text_field :quantity, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :unit %>
-    <%= form.text_field :unit %>
+    <%= form.text_field :unit, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :recipe_id %>
-    <%= form.text_field :recipe_id %>
+    <%= form.text_field :recipe_id, class: "form-control", required: true %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-secondary" %>
   </div>
 <% end %>
