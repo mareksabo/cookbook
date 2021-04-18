@@ -18,9 +18,8 @@
         <td><%= ingredient.unit %></td>
         <td><%= ingredient.name %></td>
         <td><%= ingredient.recipe_id %></td>
-        <td><%= link_to 'Show', ingredient, class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_ingredient_path(ingredient), class: "btn btn-link" %></td>
-        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+        <td><%= link_to 'Destroy', ingredient, method: :delete, class: "btn btn-outline-danger btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

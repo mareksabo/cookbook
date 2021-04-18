@@ -6,10 +6,6 @@ class IngredientsController < ApplicationController
     @ingredients = Ingredient.all
   end
 
-  # GET /ingredients/1 or /ingredients/1.json
-  def show
-  end
-
   # GET /ingredients/new
   def new
     @ingredient = Ingredient.new
@@ -25,7 +21,7 @@ class IngredientsController < ApplicationController
 
     respond_to do |format|
       if @ingredient.save
-        format.html { redirect_to @ingredient, notice: "Ingredient was successfully created." }
+        format.html { redirect_to ingredients_url, notice: "Ingredient was successfully created." }
         format.json { render :show, status: :created, location: @ingredient }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +34,7 @@ class IngredientsController < ApplicationController
   def update
     respond_to do |format|
       if @ingredient.update(ingredient_params)
-        format.html { redirect_to @ingredient, notice: "Ingredient was successfully updated." }
+        format.html { redirect_to ingredients_url, notice: "Ingredient was successfully updated." }
         format.json { render :show, status: :ok, location: @ingredient }
       else
         format.html { render :edit, status: :unprocessable_entity }
