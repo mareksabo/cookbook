@@ -64,6 +64,8 @@ class IngredientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ingredient_params
-      params.require(:ingredient).permit(:quantity, :unit, :name, :recipe_id)
+      params[:ingredient][:quantity] = 1 if params[:ingredient][:quantity].blank?
+      params[:ingredient][:quantity] = nil if params[:ingredient][:unit] == "špetka"
+      params.require(:ingredient).permit(:unit, :name, :recipe_id, :quantity)
     end
 end

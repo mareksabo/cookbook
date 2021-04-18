@@ -11,27 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field form-group">
-    <%= form.label :quantity %>
-    <%= form.text_field :quantity, class: "form-control", required: true %>
+  <div class="container">
+    <div class="row">
+      <!--    Ingredient.all.map { |i| i.unit }.uniq-->
+      <div class="col-sm-2">
+        <%= form.number_field :quantity, class: "form-control", min: 0, step: :any, placeholder: "Quantity" %>
+      </div>
+      <div class="col-sm-2">
+        <%= form.select :unit, %w[ks mg g kg ml dcl l špetka lžička lžíce], {}, { :class => 'form-select' } %>
+      </div>
+      <div class="col-md-5">
+        <%= form.text_field :name, class: "form-control", placeholder: "Name", required: true %>
+      </div>
+      <div class="col-md-1">
+        <%= form.text_field :recipe_id, class: "form-control", placeholder: "Recipe", required: true %>
+      </div>
+      <div class="col-md-1">
+        <%= form.submit class: "btn btn-success" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field form-group">
-    <%= form.label :unit %>
-    <%= form.text_field :unit, class: "form-control", required: true %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "form-control", required: true %>
-  </div>
-
-  <div class="field form-group">
-    <%= form.label :recipe_id %>
-    <%= form.text_field :recipe_id, class: "form-control", required: true %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit class: "btn btn-secondary" %>
-  </div>
+  <br/>
 <% end %>
