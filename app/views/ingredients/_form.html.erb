@@ -15,7 +15,7 @@
     <div class="row">
       <!--    Ingredient.all.map { |i| i.unit }.uniq-->
       <div class="col-sm-2">
-        <%= form.number_field :quantity, class: "form-control", min: 0, step: :any, placeholder: "Quantity" %>
+        <%= form.number_field :quantity, value: number_with_precision(form.object.quantity, precision: 2, strip_insignificant_zeros: true), class: "form-control", min: 0, step: :any, placeholder: "Quantity" %>
       </div>
       <div class="col-sm-2">
         <%= form.select :unit, %w[ks mg g kg ml dcl l špetka lžička lžíce], {}, { :class => 'form-select' } %>
