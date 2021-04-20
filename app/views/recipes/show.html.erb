@@ -9,17 +9,7 @@
   <div class="row">
     <div class="col-sm-4">
   <ul class="list-group">
-    <h4>
-    <% @recipe.ingredients.map do |i| %>
-        <li class="list-group-item-action align-items-center">
-        <span class="badge bg-primary">
-          <%= number_with_precision(i.quantity, precision: 2, strip_insignificant_zeros: true) %>
-          <%= i.unit %>
-        </span>
-          <%= i.name %>
-        </li>
-    <% end %>
-    </h4>
+    <h4>TODO zoznam ingrediencii</h4>
   </ul>
     </div>
     <div class="col-sm-8">
