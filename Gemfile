@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # markdown
 gem "redcarpet"
 
+# user login
+gem 'devise', '~> 4.7', '>= 4.7.3'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
